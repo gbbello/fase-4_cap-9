@@ -2,7 +2,7 @@
 .cards-carousel {
     --gutters: calc(3rem * .5);
     --container-width: calc(100% - var(--gutters));
-    --grid-columns: 1;
+    --grid-columns: 2;
     position: relative;
     display: grid;
     grid-auto-columns: calc(100% / var(--grid-columns));
@@ -27,14 +27,14 @@
 
     .cards-carousel {
         --gutters: calc(6rem * .5);
-        --grid-columns: 2;
+        --grid-columns: 3;
     }
 }
 
 
 @media (min-width: 768px) {
     .cards-carousel {
-        --grid-columns: 2;
+        --grid-columns: 3;
     }
 }
 
@@ -42,7 +42,7 @@
 
     .cards-carousel {
         --container-width: calc(960px - var(--gutters));
-        --grid-columns: 3;
+        --grid-columns: 4;
     }
 }
 
@@ -50,7 +50,7 @@
 
     .cards-carousel {
         --container-width: calc(1140px - var(--gutters));
-        --grid-columns: 3;
+        --grid-columns: 5;
     }
 }
 
@@ -58,6 +58,6 @@
 
     .cards-carousel {
         --container-width: calc(1320px - var(--gutters));
-        --grid-columns: 4;
+        --grid-columns: 6;
     }
 }

@@ -16,6 +16,7 @@
     --bs-gray-dark: #191919;
     --bs-gray-100: #EFF0F0;
     --bs-gray-200: #DADEE0;
+    --bs-gray-200-rgb: 218, 222, 224;
     --bs-gray-300: #B4BCC2;
     --bs-gray-400: #A1AFB3;
     --bs-gray-500: #899094;
@@ -27,7 +28,7 @@
     --bs-gray-900: #191919;
     --bs-gray-900-rgb: 26, 26, 26;
     --bs-primary: rgb(42, 124, 183);
-    --bs-secondary: rgb(77, 77, 77);
+    --bs-secondary: rgb(40, 50, 50);
     --bs-success: #198754;
     --bs-info: #0dcaf0;
     --bs-warning: rgb(255, 193, 7);
@@ -35,7 +36,7 @@
     --bs-light: #f8f9fa;
     --bs-dark: var(--bs-gray-900);
     --bs-primary-rgb: 42, 124, 183;
-    --bs-secondary-rgb: 77, 77, 77;
+    --bs-secondary-rgb: 40, 50, 50;
     --bs-success-rgb: 25, 135, 84;
     --bs-info-rgb: 13, 202, 240;
     --bs-warning-rgb: 255, 193, 7;
@@ -83,7 +84,7 @@
     --bs-body-bg-rgb: var(--bs-gray-900-rgb);
     --bs-emphasis-color: #000;
     --bs-emphasis-color-rgb: 0, 0, 0;
-    --bs-secondary-color: rgba(var(--bs-secondary-rgb), 0.75);
+    --bs-secondary-color: rgba(var(--bs-gray-200-rgb), 0.5);
     --bs-secondary-color-rgb: 76, 76, 76;
     --bs-secondary-bg: rgba(var(--bs-dark-rgb), 0.4);
     --bs-secondary-bg-rgb: var(--bs-gray-700-rgb);
@@ -261,7 +262,7 @@ h6 {
 }
 
 .display-3 {
-    font-weight: 600;
+    font-weight: 400;
     font-size: calc(1rem + 3vw);
 }
 

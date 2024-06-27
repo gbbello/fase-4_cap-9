@@ -6,7 +6,6 @@ body {
 
 }
 
-
 .blur {
     backdrop-filter: blur(50px);
 }
@@ -33,7 +32,7 @@ body {
 .main-header {
     display: flex;
     align-items: center;
-    position: fixed;
+    position: sticky;
     top: 0px;
     padding: 1rem 0;
     width: 100%;
@@ -88,23 +87,10 @@ body {
     box-shadow: var(--bs-box-shadow);
 }
 
-.main-header .btn-link {
-    --bs-btn-font-weight: 500;
+.main-header .btn-menu {
     --bs-btn-color: var(--bs-link-color);
-    --bs-btn-bg: transparent;
-    --bs-btn-border-color: transparent;
-    --bs-btn-hover-color: var(--bs-white);
-    --bs-btn-hover-border-color: transparent;
-    --bs-btn-active-color: var(--bs-white);
-    --bs-btn-active-bg: var(--bs-primary);
-    --bs-btn-active-border-color: transparent;
-    --bs-btn-disabled-color: #6c757d;
-    --bs-btn-disabled-border-color: transparent;
-    --bs-btn-box-shadow: 0 0 0 #000;
-    --bs-btn-focus-shadow-rgb: 49, 132, 253;
-    --bs-btn-hover-bg: var(--bs-dark);
-    --bs-btn-border-radius: 4px;
     text-decoration: none;
+    position: absolute;
 }
 
 /*Sobre*/
@@ -163,12 +149,34 @@ body {
     position: relative;
 }
 
+/* Card Transaction */
+
+.card-transaction {
+    --bs-card-spacer-y: 2rem;
+    --bs-card-bg: var(--bs-secondary-bg);
+    --bs-card-title-color: var(--bs-primary-text-emphasis);
+    height: 100%;
+    transition: .1s ease-in-out;
+    cursor: pointer;
+    background: var(--bs-card-bg);
+    box-shadow: hsla(164deg 34% 23% / 20%) 0px 2px 4px, hsla(164deg 34% 23% /  15%) 0px 7px 13px -3px, hsla(164deg 34% 23% / 15%) 0px -2px 0px inset;   
+    text-align: center;
+}
+.card-transaction .card-subtitle{
+    --bs-card-subtitle-color:var(--bs-primary-text-emphasis)
+}
+
+.card-transaction:hover {
+    --bs-card-bg: linear-gradient(180deg, rgba(var(--bs-black-rgb), .6)0%, rgba(var(--bs-black-rgb), .7) 100%);
+    transform: translateY(-.75rem);
+    box-shadow: 0 1rem 2rem hsla(164deg 34% 23% / 15%), hsla(164deg 34% 23% / 15%) 0px -1px 0px inset;
+}
+
 
 /* Card Feature */
 
 .card-feature {
-    --bs-card-cap-padding-y: 1rem;
-    --bs-card-spacer-y: 0;
+    --bs-card-spacer-y: 2rem;
     --bs-card-bg: linear-gradient(180deg, rgba(var(--bs-black-rgb), .5)0%, rgba(var(--bs-black-rgb), .6) 100%);
     --bs-card-title-color: var(--bs-primary-text-emphasis);
     height: 100%;
@@ -190,63 +198,7 @@ body {
     box-shadow: 0 1rem 2rem rgba(77, 64, 38, .15), rgba(77, 64, 38, 0.15) 0px -1px 0px inset;
 }
 
-/* Card GAllery*/
-.card-gallery {
-    --bs-card-cap-padding-y: 1rem;
-    --bs-card-spacer-y: 0;
-    --bs-card-bg: var(--bs-transparent);
-    --bs-card-border-width: 0px;
-    overflow: hidden;
-    position: relative;
-    transition: .3s ease-in-out;
-    cursor: pointer;
-}
 
-.card-gallery:hover {
-    --bs-card-bg: var(--bs-transparent);
-    transform: translateY(-.75rem);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .15) !important;
-}
-
-.card-gallery .card-header {
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    color: var(--bs-white);
-    transition: .3s ease-in-out;
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .5));
-}
-
-.card-gallery img {
-    filter: brightness(85%);
-    transition: .3s ease-in-out;
-    opacity: .8;
-    margin-bottom: -.5rem;
-    height: 260px;
-}
-
-.card-gallery:hover {
-    background-color: var(--bs-white);
-}
-
-.card-gallery:hover .card-header {
-
-    background-image: linear-gradient(rgba(var(--bs-secondary-rgb), 0), rgba(var(--bs-secondary-rgb), .8));
-}
-
-.card-gallery:hover img {
-    filter: brightness(100%);
-    opacity: 1;
-}
-
-
-
-/* Gema Img */
-.gema-img {
-    border: 7px solid rgba(var(--bs-dark-rgb), .6);
-    border-radius: 0.5rem;
-    width: 100%;
-}
 
 /* General Modal */
 
@@ -315,6 +267,9 @@ body {
 
     .main-header {
         padding: 2rem 0;
+    }
+    .main-header .btn-menu{
+        margin-left:-3rem;
     }
 
     #mainHeader .navbar-brand>img {
