@@ -127,6 +127,18 @@ body {
     margin:0 2rem 0 .5rem ;
 }
 
+.footer-actions{
+    position: fixed;
+    display: flex;
+    bottom: 0rem;
+    padding: 1rem;
+    background: linear-gradient(180deg, rgba(var(--bs-secondary-rgb), .85) 70%, rgba(var(--bs-secondary-rgb), .75));
+    width:100%;
+}
+.footer-actions .btn{
+    width: 100%;
+}
+
 
 /* Extras helper classes */
 .blur {
@@ -173,6 +185,17 @@ body {
 
     #mainHeader .navbar-brand>img {
         height: 85px;
+    }
+
+    .footer-actions{
+        right: 0;
+        align-items: end;
+        background:transparent;
+        padding: 2rem;
+        width: unset;
+    }
+    .footer-actions .btn{
+        width: auto;
     }
 
 }
