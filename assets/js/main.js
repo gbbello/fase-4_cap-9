@@ -1,3 +1,4 @@
+// Codigo do carrossel de cards
 var viewWidth = window.innerWidth;
 var sm = 0;
 var md = 768;
@@ -14,7 +15,7 @@ function scrollDiv(id, direction) {
     var cardsPadding = parseInt(cardsStyles.paddingLeft);
 
     var elements = targetElem.children[0];
-    var cardStyles = window.getComputedStyle(elements);
+    var cardStyles = window.getComputedStyle(elements) ;
     var cardWidth = parseInt(cardStyles.width);
 
     var steps = 1;
@@ -41,60 +42,7 @@ function scrollDiv(id, direction) {
 
 }
 
-
-//Modal Features
-
-const dialog = document.getElementById('generalDialog')
-
-var parent;
-var children;
-var index;
-
-function modalPopulate() {
-
-    var modalImgElem = dialog.querySelector('.modal-img');
-    var modalSubtitleElem = dialog.querySelector('.modal-subtitle');
-    var modalTitleElem = dialog.querySelector('.modal-title');
-    var modalBodyElem = dialog.querySelector('.modal-description');
-    var modalCounterElem = dialog.querySelector('.modal-counter');
-    var modalNavigation = dialog.querySelector('.modal-navigation');
-    var videoSrc = children[index].querySelector('.card').hasAttribute('videoSrc') ? children[index].querySelector('.card').getAttribute('videoSrc') : null;
-    var imgValue = children[index].querySelector('.card').hasAttribute('imgSrc') ? children[index].querySelector('.card').getAttribute('imgSrc') : null;
-    var subtitleValue = children[index].querySelector('.card-subtitle') ? children[index].querySelector('.card-subtitle').innerHTML : null;
-    var titleValue = children[index].querySelector('.card-title') ? children[index].querySelector('.card-title').innerHTML : null;
-    var longDescriptionValue = children[index].querySelector('.long-description') ? children[index].querySelector('.long-description').innerHTML : null;
-
-    modalSubtitleElem.innerHTML = subtitleValue;
-    modalTitleElem.innerHTML = titleValue;
-    modalBodyElem.innerHTML = longDescriptionValue;
-    modalCounterElem.innerHTML = (index + 1) + "/" + children.length;
-    if (children.length == 1) {
-        modalNavigation.classList.add('d-none');
-    } else {
-        modalNavigation.classList.remove('d-none');
-    }
-
-    if (videoSrc != null) {
-        console.log(videoSrc)
-        modalImgElem.innerHTML = "<video controls autoplay playsinline class='w-100' src='" + videoSrc + "'></video>";
-    } else if (imgValue != null) {
-        modalImgElem.innerHTML="<img class='w-100' src='"+imgValue+"'>";
-    }
-
-}
-
-function openModal(elem) {
-    indexSelected(elem);
-    modalPopulate()
-}
-
-function indexSelected(elem) {
-    parent = elem.parentNode;
-    children = Array.prototype.slice.call(parent.children);
-    index = children.indexOf(elem);
-    console.log(parent, children, index, elem);
-}
-
+// Funcao que disparo quando faço scroll
 function scrollActions() {
 
     const headerElem = document.getElementById('mainHeader');
@@ -107,41 +55,23 @@ function scrollActions() {
     }
 }
 
-function modalBack() {
-    if (index > 0 && index < children.length) {
-        index = index - 1;
-    } else {
-        index = children.length - 1;
-    }
-    modalPopulate()
-}
-
-function modalNext() {
-    if (index >= 0 && (index + 1) < children.length) {
-        index = index + 1;
-    } else {
-        index = 0;
-    }
-    modalPopulate()
-}
-
-// Event listner when page is scrolling
+// Event listner quando a pagina esta sofrendo scroll
 window.addEventListener('scroll', (event) => {
     scrollActions()
 });
 
-// Event listner when page is loaded
+// Event listner quando a pagina esta carregada
 window.addEventListener('DOMContentLoaded', (event) => {
     scrollDiv('cards', null);
-    scrollDiv('gallery', null);
+    scrollDiv('cards-transaction', null);
     //Update viewWidth variable
     viewWidth = window.innerWidth;
 });
 
-//Event listner when page is resizing
+//Event listner quando a janela esta sendo redimensionada 
 window.addEventListener('resize', (event) => {
     scrollDiv('cards', null);
-    scrollDiv('gallery', null);
+    scrollDiv('cards-transaction', null);
     // update viewWidth variable
     viewWidth = window.innerWidth;
     
@@ -151,9 +81,4 @@ window.addEventListener('resize', (event) => {
             navbar.classList.remove('show');
         }
     }
-
 });
-
-window.onload = function () {
-    folderVideo.play();
-}
